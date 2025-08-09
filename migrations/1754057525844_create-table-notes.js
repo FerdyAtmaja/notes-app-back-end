@@ -1,13 +1,8 @@
-/**
- * @type {import('node-pg-migrate').ColumnDefinitions | undefined}
- */
+/* eslint-disable camelcase */
 
-/**
- * @param pgm {import('node-pg-migrate').MigrationBuilder}
- * @param run {() => void | undefined}
- * @returns {Promise<void> | void}
- */
-export const up = (pgm) => {
+exports.shorthands = undefined;
+
+exports.up = (pgm) => {
   pgm.createTable('notes', {
     id: {
       type: 'VARCHAR(50)',
@@ -36,11 +31,6 @@ export const up = (pgm) => {
   });
 };
 
-/**
- * @param pgm {import('node-pg-migrate').MigrationBuilder}
- * @param run {() => void | undefined}
- * @returns {Promise<void> | void}
- */
-export const down = (pgm) => {
-    pgm.dropTable('notes');
+exports.down = (pgm) => {
+  pgm.dropTable('notes');
 };
